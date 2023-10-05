@@ -128,9 +128,8 @@
   <% matching_characters = @the_actor.characters%>
 
   <% matching_characters.each do |a_character| %>
-    <% m_id = a_character.movie_id %>
 
-    <% matching_movies = Movie.where({ :id => m_id }) %>
+    <% matching_movies = a_character.movie %>
 
     <% the_movie = matching_movies.at(0) %>
 
