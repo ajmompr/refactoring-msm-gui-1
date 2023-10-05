@@ -25,7 +25,9 @@ class Character < ApplicationRecord
     a_id = self.actor_id
     # Retrieve ActiveRecord relation with matching actor
     matching_actor = Actor.where({ :id => a_id})
-    # Return ActiveRecord relation with matching actor
-    return matching_actor
+    # Pop out the actor 
+    the_actor = matching_actor.at(0)
+    # Return the actor 
+    return the_actor
   end 
 end
