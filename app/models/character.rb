@@ -19,4 +19,13 @@ class Character < ApplicationRecord
     # Return ActiveRecord relation containing matching movies
     return matching_movies
   end
+
+  def actor
+    # Retrieve character's actor ID
+    a_id = self.actor_id
+    # Retrieve ActiveRecord relation with matching actor
+    matching_actor = Actor.where({ :id => a_id})
+    # Return ActiveRecord relation with matching actor
+    return matching_actor
+  end 
 end
