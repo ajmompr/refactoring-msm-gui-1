@@ -24,6 +24,11 @@ class Movie < ApplicationRecord
   end
 
   def characters
-    
+    # Retrieve movie ID
+    m_id = self.id
+    # Retrieve ActiveRecord relation containing characters
+    matching_characters = Character.where({ :movie_id => m_id})
+    # Return ActiveRecord relation containing matching characters
+    return matching_characters
   end 
 end
