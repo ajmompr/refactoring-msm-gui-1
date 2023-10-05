@@ -15,9 +15,9 @@ class Character < ApplicationRecord
     m_id = self.movie_id
     # Retrieve ActiveRecord relation with matching movies
     matching_movies = Movie.where({ :id => m_id })
-
-    # Return ActiveRecord relation containing matching movies
-    return matching_movies
+    # Return the movie
+    the_movie = matching_movies.at(0)
+    return the_movie
   end
 
   def actor
