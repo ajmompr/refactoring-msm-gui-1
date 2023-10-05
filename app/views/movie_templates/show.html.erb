@@ -113,10 +113,10 @@
   </dt>
   <dd>
 
-    <% if @the_movie.director.name != nil %>
-      <%= @the_movie.director.name %>
-    <% else %>
+    <% if @the_movie.director == nil %>
       Uh oh! We weren't able to find a director for this movie.
+    <% else %>
+     <%= @the_movie.director.name %> 
     <% end %>
   </dd>
 
